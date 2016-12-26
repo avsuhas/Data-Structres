@@ -1,0 +1,78 @@
+// Stack //
+
+#include<stdio.h>
+#include<stdlib.h>
+
+#define SIZE 5
+
+void push(int a[],int *);
+void pop(int a[],int *);
+void display(int a[],int *);
+
+int main()
+{       
+        int i;  
+        int a[SIZE];
+        int top=-1;
+        int choice;
+        
+        printf("Enter your Choice : 1.Push 2.Pop 3.Display 4. Exit\n");
+        scanf("%d",&choice);
+        
+        switch(choice)
+        {       
+                case 1: push(a,&top);
+                        break;
+                case 2: pop(a,&top);
+                        break;
+                case 3: display(a,&top);
+                        break;
+                case 4: exit(0);
+                
+                                        
+                default : printf("invalid Input\n");
+        }
+}
+
+void push(int a[],int *top)
+{
+        if(*top == SIZE-1)
+        {
+                printf("stack Full\n");
+        }
+        else
+        {
+                   (*top)++;
+                printf("Enter the element\n");
+                scanf("%d",&a[*top]);
+        }
+}
+
+void pop(int a[],int *top)
+{
+        int i;
+        if(*top == -1)
+        {
+                printf("Stack Empty\n");
+        }
+        else
+        printf("popped Element is %d",a[*top]);
+                (*top)--;
+        }
+}
+
+void display(int a[],int *top)
+{
+        int i;
+        if(*top == -1)
+        {
+                printf("Stack Empty\n");
+        }
+        else
+        {
+                for(i=0;i<*top;i++)
+                {
+                        printf("%d",a[i]);
+                }
+        }
+}

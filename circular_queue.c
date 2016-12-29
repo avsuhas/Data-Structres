@@ -1,4 +1,4 @@
-
+/* Using Structures */
 
 #include<stdio.h>
 #include<stdlib.h>
